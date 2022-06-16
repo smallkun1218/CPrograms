@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "cstdlib": "c",
+        "locale": "c",
+        "stdio.h": "c",
+        "algorithm": "c",
+        "__bit_reference": "c",
+        "__string": "c",
+        "cstring": "c",
+        "math.h": "c"
+    }
+}
