@@ -1,30 +1,38 @@
-#include <stdio.h>
+#include "stdio.h"
 
-int main(void)
-{
-    int a, b, c;                        //等价于int a; int b; int c;
-    int t;                            
-    printf("请输入三个整数(中间以空格分隔):");
-    scanf("%d %d %d\n", &a, &b, &c);
 
-    //编写代码完成a是最大值 b是中间值 c是最小值
-    printf("%d %d %d\n", a, b, c);
+int main(){
 
-    //编写代码完成a是最大值   b是中间值  c是最小值
-    if (a < b){
-        a ^= b;
-        b ^= a;
-        a ^= b;
+    int array[5], length = 5, i, j;
+
+
+    printf("请输入%d个数据:", length);
+    
+    for (i = 0; i < length; i++)
+    {
+        scanf("%d", &array[i]);
     }
-    // if (b < c){
+    
 
-    // }
+    for (i = 0; i < length - 1; i++)
+    {
+        for (j = 0; j < length - 1 - i; j++)
+        {
+            if (array[j] > array[j+1]){
+                int temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp;
+            }
+        }   
+    }
 
-    // if (a < b){
+    printf("排序后的数组是:");
+    for (i = 0; i < length ; i++){
+        printf("%d ", array[i]);
+    }
+    printf("\n");
 
-    // }
 
-    printf("%d %d %d\n", a, b, c, t);
-
- return 0;
+    return 0;
 }
+
